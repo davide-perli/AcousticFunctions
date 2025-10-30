@@ -1,0 +1,171 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.dark-mode{
+  background-color: black;
+  color: white;
+}
+
+.slider-container {
+  position: relative;
+  margin: 20px 0 0 0;
+  width: 300px;
+  font-family: "Gill Sans", sans-serif;
+  text-align: center;
+}
+
+.valueSlider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #00650f;
+  outline: none;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.valueSlider:hover {
+  opacity: 1;
+}
+
+.sliderValue {
+  font-size: 14px;
+  margin-top: 5px;
+  color: black;
+  text-align: center;
+  position: relative;
+}
+
+.valueSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: darkred;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  margin-top: -7px;
+  transition: background-color 0.3s ease;
+}
+
+.valueSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: darkred;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.slider-label {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+  color: black;
+  user-select: none;
+}
+
+.slider-min {
+  left: 0;
+}
+
+.slider-max {
+  right: 0;
+}
+
+.dark-mode .valueSlider {
+  background: #00650f;
+}
+.dark-mode .sliderValue,
+.dark-mode .slider-label {
+  color: white;
+}
+
+
+
+/* Dark mode switch begin */ 
+/* The switch - the box around the slider */
+#theme-toggle-button {
+  font-size: 10px;
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  display: inline-block;
+  width: 7em;
+  cursor: pointer;
+  /* z-index: 9999;    Make sure it stays on top */
+  background-color: transparent;
+  max-width: 100%;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}
+
+/* Dark mode switch end */ 
