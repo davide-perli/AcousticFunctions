@@ -4,32 +4,35 @@ body {
   font-family: "Gill Sans", sans-serif;
 }
 
-.dark-mode{
+.dark-mode {
   background-color: black;
   color: white;
 }
 
+/* Centered slider setup */
 .slider-container {
   position: relative;
   margin: 30px 0;
-  width: 300px; /* slider container width */
+  width: 300px;
   font-family: "Gill Sans", sans-serif;
 }
 
 .slider-track-wrapper {
-  position: relative; /* relative positioning for label */
+  position: relative;
   width: 100%;
 }
 
 .slider-title {
-  position: absolute;   /* position relative to slider track */
-  left: 50%;            /* center horizontally */
-  transform: translateX(-50%); /* center exactly */
-  top: -25px;           /* adjust above slider track */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -25px;
   font-weight: bold;
   white-space: nowrap;
+  color: inherit; /* Follows light/dark mode text color */
 }
 
+/* Slider bar itself */
 .valueSlider {
   width: 100%;
   height: 6px;
@@ -46,16 +49,50 @@ body {
   opacity: 1;
 }
 
+/* Number box below slider — prettier + dark mode friendly */
 .sliderBox {
   display: block;
   margin: 10px auto 0 auto;
-  width: 60px;
+  width: 70px;
   text-align: center;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: "Gill Sans", sans-serif;
+  color: #222;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
 }
 
+.sliderBox:hover {
+  border-color: #999;
+}
+
+.sliderBox:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Dark mode adjustments */
+.dark-mode .sliderBox {
+  color: white;
+  background: #222;
+  border: 1px solid #555;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .sliderBox:focus {
+  border-color: #4da3ff;
+  box-shadow: 0 0 6px rgba(77, 163, 255, 0.5);
+}
+
+/* Slider labels under bar */
 .slider-label {
   position: absolute;
-  bottom: -20px;
+  bottom: 10px;
   font-size: 12px;
   color: black;
   user-select: none;
@@ -65,8 +102,8 @@ body {
 .slider-max { right: 0; }
 
 .dark-mode .valueSlider { background: #00650f; }
-.dark-mode .sliderBox,
 .dark-mode .slider-label { color: white; }
+
 
 
 
