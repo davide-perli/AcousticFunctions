@@ -9,9 +9,10 @@ def main(request):
     amplitude = request.GET.get('sliderValue2', '0')
     duration = request.GET.get('sliderValue3', '0')
     phase_multiplier = request.GET.get('sliderValue4', '0')
-    # print(f"Slider values -> slider1: {frequence}, slider2: {amplitude}, slider3: {duration}, slider3: {duration}")
+    sampling_frequency= request.GET.get('sliderValue5', '0')
+    # print(f"Slider values -> slider1: {frequence}, slider2: {amplitude}, slider3: {duration}, slider3: {duration}, slider4: {sampling_frequency}")
     phase  = float(phase_multiplier) * np.pi
-    context = {'slider1': frequence, 'slider2': amplitude, 'slider3': duration, 'slider4' : phase_multiplier}
+    context = {'slider1': frequence, 'slider2': amplitude, 'slider3': duration, 'slider4': phase_multiplier, 'slider5': sampling_frequency}
     template = loader.get_template('mainPage.html')
     return HttpResponse(template.render(context, request))
 
