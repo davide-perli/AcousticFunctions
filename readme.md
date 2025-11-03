@@ -5,6 +5,13 @@ An interactive Django-based web app combining **Python signal processing (NumPy,
 
 ---
 
+## 🌐 Translations/Traduceri/Traduzioni
+
+* [Română](docs/translations/README_ro.md)
+* [Italiano](docs/translations/README_it.md)
+
+---
+
 ## 📑 Table of Contents  
 1. [Overview](#-overview)  
 2. [Mathematical Foundation](#-mathematical-foundation)  
@@ -39,18 +46,18 @@ It serves as both a **learning tool** for signal analysis and a **visual sandbox
 
 At its core, the generated signal is built from the angular frequency equation:
 
-\[
+$$
 f(t) = 2\pi \cdot \text{frequency} \cdot t + \phi
-\]
+$$
 
 where:  
-- \( t \): time (seconds)  
-- \( \phi = \text{phase coefficient} \cdot \pi \): phase offset in radians  
-- \( \text{frequency} \): number of oscillations per second  
+- $t$ — time (seconds)  
+- $\phi = \text{phase coefficient} \cdot \pi$ — phase offset in radians  
+- $\text{frequency}$ — number of oscillations per second  
 
-The output signal \( s(t) \) depends on the selected function:
+The output signal $s(t)$ depends on the selected function:
 
-\[
+$$
 s(t) =
 \begin{cases}
 \sin(f(t)), & \text{Sin wave} \\
@@ -60,9 +67,10 @@ s(t) =
 \text{sawtooth}(f(t)), & \text{Sawtooth wave} \\
 \text{square}(f(t)), & \text{Square wave}
 \end{cases}
-\]
+$$
 
 These signals are computed using **NumPy** and **SciPy**, and then serialized into JSON for interactive frontend plotting.
+
 
 ---
 
@@ -256,3 +264,14 @@ Licensed under the **MIT License** — use, modify, and distribute freely.
 ### ✨ Author
 
 **Perli Davide Andrea**
+
+
+
+
+
+
+
+
+
+
+
