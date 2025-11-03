@@ -7,8 +7,8 @@ An interactive Django-based web app combining **Python signal processing (NumPy,
 
 ## 🌐 Translations/Traduceri/Traduzioni
 
-* [Română](docs/translations/README_ro.md)
-* [Italiano](docs/translations/README_it.md)
+* [Română](docs/translations/readme-ro.md)
+* [Italiano](docs/translations/readme-it.md)
 
 ---
 
