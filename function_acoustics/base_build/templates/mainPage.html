@@ -24,14 +24,26 @@
   </head>
 <body>
 
-<center><h1>Custom function acoustics</h1></center>
+<center><h1>Function acoustics</h1></center>
 
 <br>
 <p style="text-indent: 10px;">This project aims to create, view, and listen custom functions!</p>
 <p style="text-indent: 10px;">Explaining parameters range</p>
 <p style="text-indent: 40px;">Frequency: Most humans can't hear frequencies above 20kHz (20000Hz) <a href="https://www.ncbi.nlm.nih.gov/books/NBK10924/">(reference)</a>.</p>
-<p style="text-indent: 125px;">The upper limit in average adults is often closer to 15–17 kHz.</p>
+<p style="text-indent: 125px;">The upper limit for average adults is often closer to 15–17 kHz.</p>
+<p style="text-indent: 40px;">Amplitude: Amplifies the signal on the Y axis.</p>
 <p style="text-indent: 40px;">Duration: How much does the signal last for.</p>
+<p style="text-indent: 40px;">Phase: Moves the signal on the X axis.</p>
+<p style="text-indent: 40px;">Sampling frequency: How many samples to take in the time determined by duration.</p>
+<h2>ATTENTION:</h2>
+<ul>
+<li><b>When choosing frequency/sampling frequency choosing higher values will take more time to compute so wait until the page reloads automatically!</b></li>
+<br>
+<li><b>Also in order to hear the signal the sampling frequency should be set at a high value (above 20000)</b></li>
+<br>
+<li><b>To hear better the sound a higher frequency is recomanded. Carefull a high frequency combined with a high sampling frequency will result in a lot of sounds</b></p>
+</ul>
+<p style="text-indent: 40px;"><b>being played in a short time which will lead to a high pitch disturbing noise (stop immediately if it leads to discomfort)!!!</b></p>
 
 <form id="sliderForm" method="GET" action="/">
 
