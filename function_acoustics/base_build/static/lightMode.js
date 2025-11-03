@@ -20,7 +20,30 @@ function applyInputStyles(isDark) {
         }
         input.style.boxShadow = "0 0 0 rgba(0,0,0,0)";
     });
+
+    document.querySelectorAll(".dropdown .selected").forEach(div => {
+        if (isDark) {
+            div.style.backgroundColor = "#222";
+            div.style.color = "white";
+            div.style.borderColor = "#555";
+        } else {
+            div.style.backgroundColor = "";
+            div.style.color = "";
+            div.style.borderColor = "";
+        }
+    });
+
+    document.querySelectorAll(".dropdown-content div").forEach(div => {
+        if (isDark) {
+            div.style.backgroundColor = "#333";
+            div.style.color = "white";
+        } else {
+            div.style.backgroundColor = "";
+            div.style.color = "";
+        }
+    });
 }
+
 
 function updatePlots(isDark) {
     const plotIds = ['staticPlot', 'animatedPlot'];
