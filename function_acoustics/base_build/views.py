@@ -37,7 +37,7 @@ def main(request):
     elif extracted_function == "square":
         semnal = sig.square(f)
 
-    data_to_send = {'x': t.tolist(), 'y': semnal.tolist(), 'title': title}
+    data_to_send = {'x': t.tolist(), 'y': semnal.tolist(), 'title': title, 'samplingFrequency': sampling_frequency}
     
     context = {'func': func, 'slider1': frequence, 'slider2': amplitude, 'slider3': duration, 'slider4': phase_coeficient, 'slider5': sampling_frequency, 'plot_data_json': json.dumps(data_to_send)}
     template = loader.get_template('mainPage.html')

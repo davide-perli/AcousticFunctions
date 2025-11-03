@@ -22,6 +22,62 @@ const config = {
 };
 Plotly.newPlot('staticPlot', [traceStatic], layout);
 
+// Sound
+let audioCtx = null;
+let sourceNode = null;
+
+function playSound(signalArray, sampleRate) {
+  if (audioCtx === null) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  // Stop previous sound if playing
+  if (sourceNode) {
+    sourceNode.stop();
+    sourceNode.disconnect();
+    sourceNode = null;
+  }
+
+  const buffer = audioCtx.createBuffer(1, signalArray.length, sampleRate);
+  const channelData = buffer.getChannelData(0);
+
+  const maxVal = Math.max(...signalArray.map(Math.abs));
+  for (let i = 0; i < signalArray.length; i++) {
+    channelData[i] = signalArray[i] / maxVal;
+  }
+
+  sourceNode = audioCtx.createBufferSource();
+  sourceNode.buffer = buffer;
+  sourceNode.connect(audioCtx.destination);
+  sourceNode.start();
+
+  // When sound ends, clear reference
+  sourceNode.onended = () => {
+    sourceNode = null;
+  };
+}
+
+function stopSound() {
+  if (sourceNode) {
+    sourceNode.stop();
+    sourceNode.disconnect();
+    sourceNode = null;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('playSoundBtn').addEventListener('click', () => {
+    playSound(window.dataFromBackend.y, window.dataFromBackend.samplingFrequency || 44100);
+  });
+  
+  document.getElementById('stopSoundBtn').addEventListener('click', () => {
+    stopSound();
+  });
+});
+
+
+
+
 
 // Animated plot
 const traceAnimate = {
@@ -52,14 +108,15 @@ function updateDelay() {
 }
 
 
-// Core animation step function
 function animateStep() {
-  if (currentIndex < totalPoints) {
+  let pointsPerFrame = Math.round(speedMultiplier);
+  let endIndex = Math.min(currentIndex + pointsPerFrame, totalPoints);
+  if (currentIndex < endIndex) {
     Plotly.extendTraces('animatedPlot', {
-      x: [[dataFromBackend.x[currentIndex]]],
-      y: [[dataFromBackend.y[currentIndex]]]
+      x: [dataFromBackend.x.slice(currentIndex, endIndex)],
+      y: [dataFromBackend.y.slice(currentIndex, endIndex)]
     }, [0]);
-    currentIndex++;
+    currentIndex = endIndex;
     animationId = setTimeout(animateStep, delay);
   } else {
     animationId = null; // animation finished
@@ -81,8 +138,8 @@ function stopAnimation() {
 }
 
 function speedUp() {
-  if (speedMultiplier < 5) {
-    speedMultiplier += 0.5;
+  if (speedMultiplier < 100) {
+    speedMultiplier += 1;
     updateDelay();  // Updates the text content immediately
   }
 }
