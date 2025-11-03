@@ -23,12 +23,12 @@ def main(request):
     elif extracted_function == "cos":
         semnal = np.cos(f)
     elif extracted_function == "tan":
-        if f == 0:
+        if f.size == 0:
             semnal = np.sin(0)
         else:
             semnal = np.tan(f)
     elif extracted_function == "cotan":
-        if f == 0 or np.tan(f) == 0:
+        if f.size == 0:
             semnal = np.sin(0)
         else:
             semnal = 1 / np.tan(f)
