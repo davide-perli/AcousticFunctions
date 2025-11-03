@@ -29,7 +29,8 @@ Questa applicazione web permette agli utenti di creare ed esplorare **segnali pe
 Puoi:
 
 * Scegliere un tipo di segnale (`sin`, `cos`, `tan`, `cotan`, `sawtooth`, `square`)
-* Regolare parametri come **frequenza**, **ampiezza**, **durata**, **fase** e **frequenza di campionamento**
+* Regolare parametri come **frequenza**, **ampiezza**, **durata**, **fase** e **frequenza di campionamento**(**quando si selezionano valori elevati per la frequenza e la frequenza di campionamento, attendere che la pagina si ricarichi poiché ci vuole tempo per calcolare**)
+* Visualizza il grafico (passandoci sopra il mouse è possibile ingrandire, selezionare un pezzo, scaricarlo ecc.)
 * Osservare grafici dinamici del segnale con Plotly
 * Riprodurre il segnale generato in tempo reale
 

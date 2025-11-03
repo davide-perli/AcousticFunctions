@@ -34,7 +34,8 @@ This web app allows users to design and explore **custom periodic signals** inte
 
 You can:  
 - Choose a signal type (`sin`, `cos`, `tan`, `cotan`, `sawtooth`, `square`)  
-- Adjust parameters like **frequency**, **amplitude**, **duration**, **phase**, and **sampling rate**  
+- Adjust parameters like **frequency**, **amplitude**, **duration**, **phase**, and **sampling rate** (**when selecting high values for frequency and sampling rate wait untill the page reloads since it takes time to compute**)  
+- View plot (hover over it and you can zoom, select a piece, downloads it etc.)
 - Observe dynamic signal plots using Plotly  
 - Play back the generated signal in real-time audio  
 

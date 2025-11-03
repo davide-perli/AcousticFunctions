@@ -29,7 +29,8 @@ Această aplicație web permite utilizatorilor să creeze și să exploreze **se
 Poți:
 
 * Alege un tip de semnal (`sin`, `cos`, `tan`, `cotan`, `sawtooth`, `square`)
-* Ajusta parametri precum **frecvența**, **amplitudinea**, **durata**, **faza** și **rata de eșantionare**
+* Ajusta parametri precum **frecvența**, **amplitudinea**, **durata**, **faza** și **rata de eșantionare**(**când selectați valori mari pentru frecvență și rată de eșantionare, așteptați până când pagina se reîncarcă, deoarece durează timp pentru a calcula**)
+* Vizualizați graficul (plasați cursorul peste el și puteți mări imaginea, selecta o piesă, o puteți descărca etc.)
 * Observa grafice dinamice ale semnalului cu Plotly
 * Reda semnalul generat în timp real
 
