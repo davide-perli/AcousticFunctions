@@ -1,12 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+  <head>
     <link rel="stylesheet" href="{% static 'mainPage.css' %}?v=20251031">
     <link rel="stylesheet" href="{% static 'animationButtons.css' %}?v=20251031">
+
+    <script>
+      (function() {
+          try {
+              var savedTheme = localStorage.getItem("theme");
+              if (savedTheme === "dark") {
+                  document.documentElement.classList.add("dark-mode");
+                  document.body.classList.add("dark-mode"); // ensure body also dark
+              }
+          } catch(e){}
+      })();
+    </script>
+
     <link rel ="icon" href="{% static 'favicon.ico' %}?v=20251031" type="image/x-icon">
     <script src="{% static 'lightMode.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>  
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+  </head>
 <body>
 
 <center><h1>Custom function acoustics</h1></center>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-import json, numpy as np, matplotlib.pyplot as plt, scipy.signal as sig
+import json, numpy as np, scipy.signal as sig
 def main(request):
 
     func = request.GET.get('func')
