@@ -159,7 +159,6 @@ body {
   pointer-events: none;
 }
 
-/* Dropdown content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -185,19 +184,16 @@ body {
   color: white;
 }
 
-/* Active dropdown */
 .dropdown.active .dropdown-content {
   display: block;
   animation: fadeIn 0.2s ease-out;
 }
 
-/* Selected text */
 .dropdown span.selected {
   display: inline-block;
   padding-right: 20px;
 }
 
-/* Dark mode */
 .dark-mode .dropdown {
   background: #222;
   border: 1px solid #555;
@@ -222,10 +218,9 @@ body {
 }
 
 .dark-mode .dropdown-content div:hover {
-  background-color: #bb0a1e; /* dark red */
+  background-color: #bb0a1e; 
 }
 
-/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -233,7 +228,6 @@ body {
 
 
 /* Dark mode switch begin */ 
-/* The switch - the box around the slider */
 #theme-toggle-button {
   font-size: 10px;
   position: fixed;
@@ -242,12 +236,10 @@ body {
   display: inline-block;
   width: 7em;
   cursor: pointer;
-  /* z-index: 9999;    Make sure it stays on top */
   background-color: transparent;
   max-width: 100%;
 }
 
-/* Hide default HTML checkbox */
 #toggle {
   opacity: 0;
   width: 0;
@@ -266,17 +258,14 @@ body {
   transition-duration: 0.25s;
 }
 
-/* night sky background */
 #toggle:checked + svg #container {
   fill: #2b4360;
 }
 
-/* move button to right when checked */
 #toggle:checked + svg #button {
   transform: translate(28px, 2.333px);
 }
 
-/* show/hide sun and moon based on checkbox state */
 #sun {
   opacity: 1;
 }
@@ -293,7 +282,6 @@ body {
   opacity: 1;
 }
 
-/* show or hide background items on checkbox state */
 #cloud {
   opacity: 1;
 }

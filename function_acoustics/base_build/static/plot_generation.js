@@ -76,9 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
 // Animated plot
 const traceAnimate = {
   x: [],
@@ -123,7 +120,7 @@ function animateStep() {
   }
 }
 
-// Controls:
+// Controls
 function startAnimation() {
   if (!animationId && currentIndex < totalPoints) {
     animateStep();
@@ -140,7 +137,7 @@ function stopAnimation() {
 function speedUp() {
   if (speedMultiplier < 100) {
     speedMultiplier += 1;
-    updateDelay();  // Updates the text content immediately
+    updateDelay(); 
   }
 }
 function speedDown() {
@@ -150,14 +147,11 @@ function speedDown() {
   }
 }
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('startBtn').addEventListener('click', startAnimation);
   document.getElementById('stopBtn').addEventListener('click', stopAnimation);
   document.getElementById('speedUpBtn').addEventListener('click', speedUp);
   document.getElementById('speedDownBtn').addEventListener('click', speedDown);
 
-  // initialize speed display
   updateDelay();
 });
