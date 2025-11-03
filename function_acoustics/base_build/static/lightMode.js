@@ -44,7 +44,6 @@ function applyInputStyles(isDark) {
     });
 }
 
-
 function updatePlots(isDark) {
     const plotIds = ['staticPlot', 'animatedPlot'];
     const plotColors = {
