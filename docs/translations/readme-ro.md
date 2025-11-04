@@ -122,13 +122,13 @@ Apoi, în funcție de funcția aleasă:
 
 ```python
 if func == "sin":
-    semnal = np.sin(f)
+    semnal = amplitude * np.sin(f)
 elif func == "cos":
-    semnal = np.cos(f)
+    semnal = amplitude * np.cos(f)
 elif func == "sawtooth":
-    semnal = sig.sawtooth(f)
+    semnal = amplitude * sig.sawtooth(f)
 elif func == "square":
-    semnal = sig.square(f)
+    semnal = amplitude * sig.square(f)
 ```
 
 Rezultatul este trimis template-ului ca JSON pentru afișarea în frontend:

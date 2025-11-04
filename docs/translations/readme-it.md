@@ -122,13 +122,13 @@ Poi, a seconda della funzione scelta:
 
 ```python
 if func == "sin":
-    segnale = np.sin(f)
+    segnale = amplitude * np.sin(f)
 elif func == "cos":
-    segnale = np.cos(f)
+    segnale = amplitude * np.cos(f)
 elif func == "sawtooth":
-    segnale = sig.sawtooth(f)
+    segnale = amplitude * sig.sawtooth(f)
 elif func == "square":
-    segnale = sig.square(f)
+    segnale = amplitude * sig.square(f)
 ```
 
 L'output viene passato al template come JSON per il rendering nel frontend:
