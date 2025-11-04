@@ -1,7 +1,7 @@
 # 🎵 Custom Function Acoustics
 
 **Creează, vizualizează și ascultă semnale matematice personalizate în timp real.**
-O aplicație web interactivă bazată pe Django care combină **procesarea semnalelor în Python (NumPy, SciPy)** cu vizualizări frontend **Plotly.js** — toate într-o interfață responsivă cu **mod întunecat/lumină**.
+O aplicație web interactivă bazată pe Django care combină **procesarea semnalelor în Python (NumPy, SciPy)** cu vizualizări frontend **Plotly.js** - toate într-o interfață responsivă cu **mod întunecat/lumină**.
 
 ---
 
@@ -48,22 +48,23 @@ $$
 
 unde:
 
-* $t$ — timp (secunde)
-* $\phi = \text{coeficient de fază} \cdot \pi$ — decalaj de fază în radiani
-* $\text{frequency}$ — numărul de oscilații pe secundă
+* $t$ - timp (secunde)
+* $\phi = \text{coeficient de fază} \cdot \pi$ - decalaj de fază în radiani pe axa X
+* $\text{frequency}$ - numărul de oscilații pe secundă
+* $\text{amplitude}$ - amplitudinea semnalului pe axa Y
 
 Semnalul de ieșire $s(t)$ depinde de funcția selectată:
 
 $$
 s(t) =
 \begin{cases}
-\sin(f(t)), & \text{Undă sinus} \\
-\cos(f(t)), & \text{Undă cosinus} \\
-\tan(f(t)), & \text{Undă tangentă} \\
-\cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Undă cotangentă} \\
-\text{sawtooth}(f(t)), & \text{Undă sawtooth} \\
-\text{square}(f(t)), & \text{Undă pătrată}
-\end{cases}
+amplitude * \sin(f(t)), & \text{Undă sinus} \\
+amplitude * \cos(f(t)), & \text{Undă cosinus} \\
+amplitude * \tan(f(t)), & \text{Undă tangentă} \\
+amplitude * \cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Undă cotangentă} \\
+amplitude * \text{sawtooth}(f(t)), & \text{Undă sawtooth} \\
+amplitude * \text{square}(f(t)), & \text{Undă pătrată}
+amplitude * \end{cases}
 $$
 
 Aceste semnale sunt calculate folosind **NumPy** și **SciPy**, apoi serializate în JSON pentru vizualizare interactivă în frontend.

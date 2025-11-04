@@ -52,21 +52,22 @@ f(t) = 2\pi \cdot \text{frequency} \cdot t + \phi
 $$
 
 where:  
-- $t$ — time (seconds)  
-- $\phi = \text{phase coefficient} \cdot \pi$ — phase offset in radians  
-- $\text{frequency}$ — number of oscillations per second  
+* $t$ — time (seconds)  
+* $\phi = \text{phase coefficient} \cdot \pi$ - phase offset in radians on the X axis
+* $\text{frequency}$ - number of oscillations per second  
+* $\text{amplitude}$ - amplitude of a signal on the Y axis
 
 The output signal $s(t)$ depends on the selected function:
 
 $$
 s(t) =
 \begin{cases}
-\sin(f(t)), & \text{Sin wave} \\
-\cos(f(t)), & \text{Cos wave} \\
-\tan(f(t)), & \text{Tan wave} \\
-\cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Cotan wave} \\
-\text{sawtooth}(f(t)), & \text{Sawtooth wave} \\
-\text{square}(f(t)), & \text{Square wave}
+amplitude * \sin(f(t)), & \text{Sin wave} \\
+amplitude * \cos(f(t)), & \text{Cos wave} \\
+amplitude * \tan(f(t)), & \text{Tan wave} \\
+amplitude * \cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Cotan wave} \\
+amplitude * \text{sawtooth}(f(t)), & \text{Sawtooth wave} \\
+amplitude * \text{square}(f(t)), & \text{Square wave}
 \end{cases}
 $$
 

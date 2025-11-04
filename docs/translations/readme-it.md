@@ -1,7 +1,7 @@
 # 🎵 Custom Function Acoustics
 
 **Crea, visualizza e ascolta segnali matematici personalizzati in tempo reale.**
-Un'app web interattiva basata su Django che combina **elaborazione dei segnali in Python (NumPy, SciPy)** con visualizzazioni frontend **Plotly.js** — tutto in un'interfaccia responsiva con **modalità chiaro/scuro**.
+Un'app web interattiva basata su Django che combina **elaborazione dei segnali in Python (NumPy, SciPy)** con visualizzazioni frontend **Plotly.js** - tutto in un'interfaccia responsiva con **modalità chiaro/scuro**.
 
 ---
 
@@ -48,21 +48,22 @@ $$
 
 dove:
 
-* $t$ — tempo (secondi)
-* $\phi = \text{coefficiente di fase} \cdot \pi$ — sfasamento in radianti
-* $\text{frequency}$ — numero di oscillazioni al secondo
+* $t$ - tempo (secondi)
+* $\phi = \text{coefficiente di fase} \cdot \pi$ - sfasamento in radianti sull'asse X
+* $\text{frequency}$ - numero di oscillazioni al secondo
+* $\text{amplitude}$ - ampiezza del segnale sull'asse Y
 
 Il segnale di uscita $s(t)$ dipende dalla funzione selezionata:
 
 $$
 s(t) =
 \begin{cases}
-\sin(f(t)), & \text{Onda sinusoidale} \
-\cos(f(t)), & \text{Onda coseno} \
-\tan(f(t)), & \text{Onda tangente} \
-\cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Onda cotangente} \
-\text{sawtooth}(f(t)), & \text{Onda sawtooth} \
-\text{square}(f(t)), & \text{Onda quadrata}
+amplitude * \sin(f(t)), & \text{Onda sinusoidale} \\
+amplitude * \cos(f(t)), & \text{Onda coseno} \\
+amplitude * \tan(f(t)), & \text{Onda tangente} \\
+amplitude * \cot(f(t)) = \frac{1}{\tan(f(t))}, & \text{Onda cotangente} \\
+amplitude * \text{sawtooth}(f(t)), & \text{Onda sawtooth} \\
+amplitude * \text{square}(f(t)), & \text{Onda quadrata}
 \end{cases}
 $$
 
