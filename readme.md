@@ -168,6 +168,9 @@ custom-function-acoustics/
 │       ├── light_mode.png
 │       ├── dark_mode.png
 │       └── animated_preview.gif
+|
+├── Dockerfile                       # To run inside a container
+├── docker-compose.yml               # To run inside a container
 └── README.md
 ```
 
@@ -222,6 +225,13 @@ cd function_acoustics
 
 ```bash
 python manage.py runserver
+```
+### If you prefer to run the project inside a Docker container (no local Python setup needed):
+
+🐳 Run with Docker
+
+```bash
+docker compose up --build
 ```
 
 Then open your browser and visit:

@@ -163,6 +163,8 @@ custom-function-acoustics/
 │       ├── light_mode.png
 │       ├── dark_mode.png
 │       └── animated_preview.gif
+├── Dockerfile                       # Pentru a rula în interiorul unui container
+├── docker-compose.yml               # Pentru a rula în interiorul unui container
 └── README.md
 ```
 
@@ -214,6 +216,14 @@ pip install django numpy scipy
 ```bash
 cd function_acoustics
 python manage.py runserver
+```
+
+### Dacă preferați să rulați proiectul într-un container Docker (nu este necesară configurarea locală a Python):
+
+🐳 Rulați cu Docker
+
+```bash
+docker compose up --build
 ```
 
 Apoi deschide browserul și vizitează:

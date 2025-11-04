@@ -163,6 +163,8 @@ custom-function-acoustics/
 │       ├── light_mode.png
 │       ├── dark_mode.png
 │       └── animated_preview.gif
+├── Dockerfile                       # Per correre all'interno di un contenitore
+├── docker-compose.yml               # Per correre all'interno di un contenitore
 └── README.md
 ```
 
@@ -214,6 +216,14 @@ pip install django numpy scipy
 ```bash
 cd function_acoustics
 python manage.py runserver
+```
+
+### Se preferisci eseguire il progetto in un contenitore Docker (non è richiesta alcuna configurazione Python locale)
+
+🐳 Esegui con Docker
+
+```bash
+docker compose up --build
 ```
 
 Poi apri il browser e visita:
