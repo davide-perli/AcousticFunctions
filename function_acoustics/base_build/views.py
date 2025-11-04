@@ -10,7 +10,7 @@ def main(request):
     extracted_function = function_str.split(' ')[-1].lower() 
 
     frequence = int(request.GET.get('sliderValue1', '0'))
-    amplitude = int(request.GET.get('sliderValue2', '0'))
+    amplitude = int(request.GET.get('sliderValue2', '1'))
     duration = int(request.GET.get('sliderValue3', '0'))
     phase_coeficient = float(request.GET.get('sliderValue4', '0'))
     sampling_frequency= int(request.GET.get('sliderValue5', '0'))
@@ -18,24 +18,24 @@ def main(request):
     t = np.linspace(0, duration, int(duration * sampling_frequency))
     f = 2 * np.pi * frequence * t + phase
     if extracted_function == "sin":
-        semnal = np.sin(f)
+        semnal = amplitude * np.sin(f)
     elif extracted_function == "cos":
-        semnal = np.cos(f)
+        semnal = amplitude * np.cos(f)
     elif extracted_function == "tan":
         if f.size == 0:
-            semnal = np.sin(0)
+            semnal = amplitude * np.sin(0)
         else:
-            semnal = np.tan(f)
+            semnal = amplitude * np.tan(f)
     elif extracted_function == "cotan":
         if f.size == 0:
-            semnal = np.sin(0)
+            semnal = amplitude * np.sin(0)
         else:
-            semnal = 1 / np.tan(f)
+            semnal = amplitude * (1 / np.tan(f))
     elif extracted_function == "sawtooth":
-        semnal = sig.sawtooth(f)
+        semnal = amplitude * sig.sawtooth(f)
     elif extracted_function == "square":
-        semnal = sig.square(f)
-
+        semnal = amplitude * sig.square(f)
+    print("Amplitude: ", amplitude)
     data_to_send = {'x': t.tolist(), 'y': semnal.tolist(), 'title': title, 'samplingFrequency': sampling_frequency}
     context = {'func': func, 'slider1': frequence, 'slider2': amplitude, 'slider3': duration, 'slider4': phase_coeficient, 'slider5': sampling_frequency, 'plot_data_json': json.dumps(data_to_send)}
     template = loader.get_template('mainPage.html')
