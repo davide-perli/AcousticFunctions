@@ -269,7 +269,7 @@ Watch the waveform and controls come alive:
 
 ## 📜 License
 
-Licensed under the **MIT License** - use, modify, and distribute freely.
+Licensed under the [**MIT License**](LICENSE.md) - use, modify, and distribute freely.
 
 ---
 
