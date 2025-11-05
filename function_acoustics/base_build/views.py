@@ -9,11 +9,11 @@ def main(request):
     title = f"{function_str.split(' ')[-1]} signal"
     extracted_function = function_str.split(' ')[-1].lower() 
 
-    frequence = int(request.GET.get('sliderValue1', '0'))
-    amplitude = int(request.GET.get('sliderValue2', '1'))
-    duration = int(request.GET.get('sliderValue3', '0'))
+    frequence = float(request.GET.get('sliderValue1', '0'))
+    amplitude = float(request.GET.get('sliderValue2', '1'))
+    duration = float(request.GET.get('sliderValue3', '0'))
     phase_coeficient = float(request.GET.get('sliderValue4', '0'))
-    sampling_frequency= int(request.GET.get('sliderValue5', '0'))
+    sampling_frequency= float(request.GET.get('sliderValue5', '0'))
     phase  = phase_coeficient * np.pi
     t = np.linspace(0, duration, int(duration * sampling_frequency))
     f = 2 * np.pi * frequence * t + phase
