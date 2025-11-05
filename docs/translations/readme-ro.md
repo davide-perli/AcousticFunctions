@@ -259,7 +259,7 @@ Acum poți:
 
 ## 📜 Licență
 
-Licențiat sub [**MIT License**](LICENSE.md) - utilizare, modificare și distribuire liberă.
+Licențiat sub [**MIT License**](../../LICENSE.md) - utilizare, modificare și distribuire liberă.
 
 ---
 
