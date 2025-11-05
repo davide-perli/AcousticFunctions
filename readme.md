@@ -1,7 +1,7 @@
 # 🎵 Custom Function Acoustics  
 
 **Create, visualize, and listen to custom mathematical signals in real time.**  
-An interactive Django-based web app combining **Python signal processing (NumPy, SciPy)** with **Plotly.js** frontend visualizations — all wrapped in a responsive **dark/light mode** interface.
+An interactive Django-based web app combining **Python signal processing (NumPy, SciPy)** with **Plotly.js** frontend visualizations - all wrapped in a responsive **dark/light mode** interface.
 
 ---
 
@@ -52,7 +52,7 @@ f(t) = 2\pi \cdot \text{frequency} \cdot t + \phi
 $$
 
 where:  
-* $t$ — time (seconds)  
+* $t$ - time (seconds)  
 * $\phi = \text{phase coefficient} \cdot \pi$ - phase offset in radians on the X axis
 * $\text{frequency}$ - number of oscillations per second  
 * $\text{amplitude}$ - amplitude of a signal on the Y axis
@@ -269,7 +269,7 @@ Watch the waveform and controls come alive:
 
 ## 📜 License
 
-Licensed under the **MIT License** — use, modify, and distribute freely.
+Licensed under the **MIT License** - use, modify, and distribute freely.
 
 ---
 

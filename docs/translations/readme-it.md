@@ -259,7 +259,7 @@ Ora puoi:
 
 ## 📜 Licenza
 
-Licenziato sotto **MIT License** — uso, modifica e distribuzione libera.
+Licenziato sotto **MIT License** - uso, modifica e distribuzione libera.
 
 ---
 

@@ -63,7 +63,7 @@ function updatePlots(isDark) {
 
         gd.data.forEach((trace, idx) => {
             const color = plotColors[id] ? (isDark ? plotColors[id].dark : plotColors[id].light) : 'blue';
-            Plotly.restyle(gd, { 'line.color': color }, [idx]);  // <-- restyle per trace
+            Plotly.restyle(gd, { 'line.color': color }, [idx]); 
         });
 
         Plotly.update(gd, {}, layoutUpdate);  // update layout separately
