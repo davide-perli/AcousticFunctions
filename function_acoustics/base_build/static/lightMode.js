@@ -13,12 +13,7 @@ function applyInputStyles(isDark) {
             input.style.backgroundColor = "#222";
             input.style.color = "white";
             input.style.borderColor = "#555";
-        } else {
-            input.style.backgroundColor = "";
-            input.style.color = "";
-            input.style.borderColor = "";
         }
-        input.style.boxShadow = "0 0 0 rgba(0,0,0,0)";
     });
 
     document.querySelectorAll(".dropdown .selected").forEach(div => {
@@ -26,10 +21,6 @@ function applyInputStyles(isDark) {
             div.style.backgroundColor = "#222";
             div.style.color = "white";
             div.style.borderColor = "#555";
-        } else {
-            div.style.backgroundColor = "";
-            div.style.color = "";
-            div.style.borderColor = "";
         }
     });
 
@@ -37,9 +28,6 @@ function applyInputStyles(isDark) {
         if (isDark) {
             div.style.backgroundColor = "#333";
             div.style.color = "white";
-        } else {
-            div.style.backgroundColor = "";
-            div.style.color = "";
         }
     });
 }
@@ -61,7 +49,7 @@ function updatePlots(isDark) {
             font: { color: isDark ? '#fff' : '#000' }
         };
 
-        gd.data.forEach((trace, idx) => {
+        gd.data.forEach((_, idx) => {
             const color = plotColors[id] ? (isDark ? plotColors[id].dark : plotColors[id].light) : 'blue';
             Plotly.restyle(gd, { 'line.color': color }, [idx]); 
         });

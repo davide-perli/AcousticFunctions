@@ -218,7 +218,8 @@ body {
 }
 
 .dark-mode .dropdown-content div:hover {
-  background-color: #bb0a1e; 
+  background-color: #bb0a1e !important;
+  color: #fff !important;
 }
 
 @keyframes fadeIn {

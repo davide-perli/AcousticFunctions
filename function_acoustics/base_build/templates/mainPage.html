@@ -1,26 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+  <head>  
+    <style>
+      html {
+          opacity: 0;
+          transition: opacity 0.8s ease-in-out;
+      }
+      html.visible {
+          opacity: 1;
+      }
+      html.fading-out {
+          opacity: 0;
+      }
+    </style>
     <link rel="stylesheet" href="{% static 'mainPage.css' %}?v=20251031">
     <link rel="stylesheet" href="{% static 'animationButtons.css' %}?v=20251031">
-
-    <script>
-      (function() {
-          try {
-              var savedTheme = localStorage.getItem("theme");
-              if (savedTheme === "dark") {
-                  document.documentElement.classList.add("dark-mode");
-                  document.body.classList.add("dark-mode"); 
-              }
-          } catch(e){}
-      })();
-    </script>
-
     <link rel ="icon" href="{% static 'favicon.ico' %}?v=20251031" type="image/x-icon">
     <script src="{% static 'lightMode.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+  
+
   </head>
 <body>
 
@@ -69,7 +70,7 @@
   <div class="slider-container">
     <div class="slider-track-wrapper">
       <label class="slider-title">Frequency</label>
-      <input type="range" class="valueSlider" name="sliderValue1" min="0" max="20000" value="{{slider1|default:'0'}}" step="1">
+      <input type="range" class="valueSlider" name="sliderValue1" min="0" max="20000" value="{{slider1|default:'0'}}" step="0.1">
     </div>
     <input type="number" class="sliderBox" min="0" max="20000" step="1" value="{{slider1|default:'0'}}">
     <span class="slider-label slider-min">0</span>
@@ -84,7 +85,7 @@
       <label class="slider-title">Amplitude</label>
       <input type="range" class="valueSlider" name="sliderValue2" min="0" max="200" value="{{slider2|default:'1'}}" step="0.1">
     </div>
-    <input type="number" class="sliderBox" min="1" max="200" step="0" value="{{slider2|default:'1'}}">
+    <input type="number" class="sliderBox" min="1" max="200" step="1" value="{{slider2|default:'1'}}">
     <span class="slider-label slider-min">0</span>
     <span class="slider-label slider-max">200</span>
   </div>
@@ -95,11 +96,11 @@
   <div class="slider-container">
     <div class="slider-track-wrapper">
       <label class="slider-title">Duration</label>
-      <input type="range" class="valueSlider" name="sliderValue3" min="0" max="100" value="{{slider3|default:'0'}}" step="0.1">
+      <input type="range" class="valueSlider" name="sliderValue3" min="0" max="50" value="{{slider3|default:'0'}}" step="0.1">
     </div>
-    <input type="number" class="sliderBox" min="0" max="100" step="0.1" value="{{slider3|default:'0'}}">
+    <input type="number" class="sliderBox" min="0" max="50" step="0.1" value="{{slider3|default:'0'}}">
     <span class="slider-label slider-min">0</span>
-    <span class="slider-label slider-max">100</span>
+    <span class="slider-label slider-max">50</span>
   </div>
 
   <br>
@@ -108,9 +109,9 @@
   <div class="slider-container">
     <div class="slider-track-wrapper">
       <label class="slider-title">Phase</label>
-      <input type="range" class="valueSlider" name="sliderValue4" min="0" max="2" value="{{slider4|default:'0'}}" step="0.01">
+      <input type="range" class="valueSlider" name="sliderValue4" min="0" max="2" value="{{slider4|default:'0'}}" step="0.1">
     </div>
-    <input type="number" class="sliderBox" min="0" max="2" step="0.01" value="{{slider4|default:'0'}}">
+    <input type="number" class="sliderBox" min="0" max="2" step="0.1" value="{{slider4|default:'0'}}">
     <span class="slider-label slider-min">0</span>
     <span class="slider-label slider-max">2</span>
   </div>
@@ -121,7 +122,7 @@
   <div class="slider-container">
     <div class="slider-track-wrapper">
       <label class="slider-title">Sampling frequency</label>
-      <input type="range" class="valueSlider" name="sliderValue5" min="0" max="1000000" value="{{slider5|default:'0'}}" step="1">
+      <input type="range" class="valueSlider" name="sliderValue5" min="0" max="1000000" value="{{slider5|default:'0'}}" step="0.1">
     </div>
     <input type="number" class="sliderBox" min="0" max="1000000" step="1" value="{{slider5|default:'0'}}">
     <span class="slider-label slider-min">0</span>
@@ -205,6 +206,46 @@
   </svg>
 </label>
 
+<script>
+  function fadeInPage() {
+      requestAnimationFrame(() => {
+          setTimeout(() => {
+              document.documentElement.classList.add('visible');
+          }, 10);
+      });
+  }
 
+  // Fade out before leaving the page
+  function fadeOutAndNavigate(url) {
+      document.documentElement.classList.add('fading-out');
+      setTimeout(() => {
+          window.location.href = url;
+      }, 800); 
+  }
+
+  window.addEventListener('load', fadeInPage);
+  window.addEventListener('pageshow', (event) => {
+      if (event.persisted) fadeInPage();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href]').forEach(link => {
+          if (link.hostname === location.hostname) {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  fadeOutAndNavigate(link.href);
+              });
+          }
+      });
+
+      document.querySelectorAll('form').forEach(form => {
+          form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              document.documentElement.classList.add('fading-out');
+              setTimeout(() => form.submit(), 800);
+          });
+      });
+  });
+</script>
 </body>
 </html>
