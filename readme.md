@@ -235,7 +235,50 @@ docker compose up --build
 ```
 
 Then open your browser and visit:
-👉 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+👉 [http://127.0.0.1:8001/](http://127.0.0.1:8001/)
+
+---
+
+### If you prefer to run the project on Kubernetes (Minikube):
+
+☸️ Run with Minikube
+
+```bash
+minikube start
+```
+
+Build the Docker image inside Minikube (run from the repo root where the `Dockerfile` is):
+
+```bash
+minikube image build -t function-acoustics:latest .
+```
+
+Apply the Kubernetes manifests:
+
+```bash
+kubectl apply -k k8s
+kubectl rollout status deployment/function-acoustics
+```
+
+Expose it locally on port `8001`:
+
+```bash
+kubectl port-forward service/function-acoustics 8001:8001
+```
+
+By default, `kubectl port-forward` listens only on `127.0.0.1` (localhost). If you want to access it from another device on your LAN, bind to all interfaces:
+
+```bash
+kubectl port-forward --address 0.0.0.0 service/function-acoustics 8001:8001
+```
+
+Then open it from another device using your PC's LAN IP:
+`http://<your-pc-ip>:8001/`
+
+(If it still doesn’t work, Windows Firewall may be blocking inbound connections on port `8001`.)
+
+Then open:
+👉 [http://127.0.0.1:8001/](http://127.0.0.1:8001/)
 
 You can now:
 

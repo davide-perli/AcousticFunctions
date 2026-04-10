@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pdb
+.pytest_cache/
+
+# Virtual environments
+mediu_virtual/
+venv/
+.venv/
+
+# IDE / OS
+.vscode/
+.DS_Store
+
+# Git
+.git/
+.gitignore

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: function-acoustics
+  labels:
+    app: function-acoustics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: function-acoustics
+  template:
+    metadata:
+      labels:
+        app: function-acoustics
+    spec:
+      containers:
+        - name: web
+          image: function-acoustics:latest
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 8000

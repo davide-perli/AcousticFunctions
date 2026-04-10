@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: function-acoustics
+  labels:
+    app: function-acoustics
+spec:
+  type: ClusterIP
+  selector:
+    app: function-acoustics
+  ports:
+    - name: http
+      port: 8001
+      targetPort: 8000
+      protocol: TCP
