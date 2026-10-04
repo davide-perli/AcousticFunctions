@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'mainPage.css' %}?v=20251031">
     <link rel="stylesheet" href="{% static 'animationButtons.css' %}?v=20251031">
     <link rel ="icon" href="{% static 'favicon.ico' %}?v=20251031" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <script src="{% static 'lightMode.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
@@ -26,25 +27,31 @@
 <body>
 
 <center><h1>Function acoustics</h1></center>
+<center><h4><a href="https://github.com/davide-perli/AcousticFunctions" target="_blank" rel="noopener" class="text-white text-decoration-none">
+                <i class="bi bi-github me-1"></i> Source code on GitHub
+            </a></h4></center>
 
 <br>
-<p style="text-indent: 10px;">This project aims to create, view, and listen custom functions!</p>
-<p style="text-indent: 10px;">Explaining parameters range</p>
-<p style="text-indent: 40px;">Frequency: Most humans can't hear frequencies above 20kHz (20000Hz) <a href="https://www.ncbi.nlm.nih.gov/books/NBK10924/">(reference)</a>.</p>
-<p style="text-indent: 125px;">The upper limit for average adults is often closer to 15–17 kHz.</p>
-<p style="text-indent: 40px;">Amplitude: Amplifies the signal on the Y axis.</p>
-<p style="text-indent: 40px;">Duration: How much does the signal last for.</p>
-<p style="text-indent: 40px;">Phase: Moves the signal on the X axis.</p>
-<p style="text-indent: 40px;">Sampling frequency: How many samples to take in the time determined by duration.</p>
-<h2>ATTENTION:</h2>
+<p>This project aims to create, view, and listen functions!</p>
+<p>Parameters range:</p>
 <ul>
-<li><b>When choosing frequency/sampling frequency choosing higher values will take more time to compute so wait until the page reloads automatically!</b></li>
+<p> - Frequency: Most humans can't hear frequencies above 20kHz (20000Hz) <a href="https://www.ncbi.nlm.nih.gov/books/NBK10924/">(reference)</a>.</p>
+<p> - The upper limit for average adult is often closer to 15–17 kHz.</p>
+<p> - Amplitude: Amplifies the signal on the Y axis.</p>
+<p> - Duration: How much does the signal last for.</p>
+<p> - Phase: Moves the signal on the X axis.</p>
+<p> - Sampling frequency: How many samples to take in the time determined by duration.</p>
+</ul>
+<h3 style="color:red;">ATTENTION:</h3>
+<ul>
+<li><b>When choosing frequency/sampling frequency choosing high values will take more time to compute so wait until the page reloads automatically!</b></li>
 <br>
 <li><b>Also in order to hear the signal the sampling frequency should be set at a high value (above 20000)</b></li>
 <br>
-<li><b>To hear better the sound a higher frequency is recommended. Carefull a high frequency combined with a high sampling frequency will result in a lot of sounds</b></p>
+<li><b>To better hear the sound a higher frequency is recommended. Carefull a high frequency combined with a high sampling frequency may result in a many sounds
+  being played in a short time which will lead to a high pitch disturbing noise (stop immediately if it leads to discomfort)!!! Keep the volume low while testing
+</b></p>
 </ul>
-<p style="text-indent: 40px;"><b>being played in a short time which will lead to a high pitch disturbing noise (stop immediately if it leads to discomfort)!!!</b></p>
 
 <form id="sliderForm" method="GET" action="/">
 
